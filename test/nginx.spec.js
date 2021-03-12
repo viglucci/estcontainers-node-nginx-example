@@ -12,8 +12,8 @@ describe("NginxTest", () => {
     const composeFilePath = path.resolve(__dirname);
     const composeFile = "test-docker-compose.yml";
     environment = await new DockerComposeEnvironment(composeFilePath, composeFile)
-      .withWaitStrategy("frontend", Wait.forLogMessage("Configuration complete; ready for start up"))
-      .withWaitStrategy("backend", Wait.forLogMessage("Backend starting"))
+      .withWaitStrategy("frontend_1", Wait.forLogMessage("Configuration complete; ready for start up"))
+      .withWaitStrategy("backend_1", Wait.forLogMessage("Backend starting"))
       .withBuild()
       .up();
     let nginxContainer = environment.getContainer("frontend_1");
