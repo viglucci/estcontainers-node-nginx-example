@@ -23,7 +23,7 @@ Hello from Docker!
 }
 
 func main() {
-  log.Println("Backend starting")
-  http.HandleFunc("/", handler)
-  log.Fatal(http.ListenAndServe(":80", nil))
+	log.Println("Backend starting")
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
